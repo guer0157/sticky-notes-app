@@ -11,8 +11,8 @@ Make sure you have **Node.js** (v18+ recommended) and **npm** installed on your 
 1. Clone the repository:
 
    ```bash
-   git clone <your-repository-url>
-   cd <your-project-folder>
+   git clone https://github.com/guer0157/sticky-notes-app.git
+   cd sticky-notes-app
    ```
 
 2. Install dependecies:
