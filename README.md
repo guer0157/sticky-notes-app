@@ -24,17 +24,16 @@ Make sure you have **Node.js** (v18+ recommended) and **npm** installed on your 
    npm run dev
    ```
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Assumptions
 
-Currently, two official plugins are available:
+- Only one user at a time
+- There is no need to resize the board size
+-
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Architechture
 
-## React Compiler
+Lifted state architecture was used to ensure there's a single source of truth from which all NOTE states and actions like "Drag" or "Resize" is handles. Rather than passing data up and downt he tree. "App.tsx" passed note data and event callbacks to NoteBoard and Note components using functional state setters to overrite stale state.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React "refs" were used to avoid unecessary re-renders while keeping track of properties such as note ids and coordinated, this allowed me to have them readily available to make the necessary calculations for dragOffset, Drag, and resize.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The Note component focuses on styling and dynamic rendering of the properties passed by its parent component. It features isolated hit tarjets, renders position data passed down from App such as y and y coordinates as well as width and height.

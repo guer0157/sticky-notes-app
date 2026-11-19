@@ -1,3 +1,4 @@
 - Limit wrap text inside sticky note
 - Allow resize from any corner
 - Keep sticky notes within the board boundary
+- Create a hook for all the interactions
