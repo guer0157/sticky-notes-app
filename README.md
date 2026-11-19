@@ -1,5 +1,29 @@
 # React + Vite
 
+## Getting Started
+
+### Prerequisites
+
+Make sure you have **Node.js** (v18+ recommended) and **npm** installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <your-repository-url>
+   cd <your-project-folder>
+   ```
+
+2. Install dependecies:
+   ```bash
+   npm install
+   ```
+3. Start the project:
+   ```bash
+   npm run dev
+   ```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
